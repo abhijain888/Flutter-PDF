@@ -5,6 +5,8 @@ import 'package:pdf/widgets.dart';
 Future<Uint8List> buildPdf(String text) async {
   final pdf = Document();
 
+  print(text);
+
   pdf.addPage(
     Page(
       pageFormat: PdfPageFormat.a4,

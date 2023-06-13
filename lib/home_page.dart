@@ -12,11 +12,12 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("PDF Flutter"),
       ),
-      body: const Center(
+      body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: TextField(
-            decoration: InputDecoration(
+            controller: _controller,
+            decoration: const InputDecoration(
               hintText: "Write here something to save in pdf",
             ),
           ),
@@ -26,7 +27,8 @@ class MyHomePage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-                builder: (_) => PdfPreviewScreen(text: _controller.text)),
+              builder: (_) => PdfPreviewScreen(text: _controller.text),
+            ),
           );
         },
         child: const Icon(Icons.picture_as_pdf),
